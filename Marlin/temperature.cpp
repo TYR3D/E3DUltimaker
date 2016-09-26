@@ -531,8 +531,8 @@ void manage_heater()
         {
             //Did not heat up MAX_HEATING_TEMPERATURE_INCREASE in MAX_HEATING_CHECK_MILLIS while the PID was at the maximum.
             //Potential problems could be that the heater is not working, or the temperature sensor is not measuring what the heater is heating.
-            disable_heater();
-            Stop(STOP_REASON_HEATER_ERROR);
+            //disable_heater(); [E3D]
+            //Stop(STOP_REASON_HEATER_ERROR); [E3D]
         }
     }else{
         max_heating_start_millis[e] = 0;

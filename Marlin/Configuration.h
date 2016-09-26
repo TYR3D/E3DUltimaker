@@ -163,7 +163,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
+#define HEATER_0_MAXTEMP 400 //[E3D]
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define BED_MAXTEMP 130
@@ -199,9 +199,9 @@
     //#define  DEFAULT_Kd 114
 
 // Ultimaker2
-    #define  DEFAULT_Kp 10.0
-    #define  DEFAULT_Ki 2.5
-    #define  DEFAULT_Kd 100.0
+    #define  DEFAULT_Kp 36.59 // [E3D]
+    #define  DEFAULT_Ki 3.65 // [E3D]
+    #define  DEFAULT_Kd 91.72 // [E3D]
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
@@ -335,11 +335,11 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 230
+#define X_MAX_POS 215 // [E3D]
 #define X_MIN_POS 0
-#define Y_MAX_POS 224.5
+#define Y_MAX_POS 210 // [E3D]
 #define Y_MIN_POS 0
-#define Z_MAX_POS 230
+#define Z_MAX_POS 230 // Change value for Volcano [E3D]
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -363,9 +363,9 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0,80.0,200,282}  // default steps per unit for ultimaker2
-#define DEFAULT_MAX_FEEDRATE          {300, 300, 40, 45}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0,80.0,200,417.5}  // default steps per unit for ultimaker2 [E3D]
+#define DEFAULT_MAX_FEEDRATE          {300, 300, 40, 20}    // (mm/sec) [E3D]
+#define DEFAULT_MAX_ACCELERATION      {9000,9000,100,3000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot. [E3D]
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
@@ -394,10 +394,10 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable eeprom support
-#define EEPROM_SETTINGS
+//#define EEPROM_SETTINGS [E3D]
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-#define EEPROM_CHITCHAT
+//#define EEPROM_CHITCHAT [E3D]
 
 // Preheat Constants
 #define PLA_PREHEAT_HOTEND_TEMP 180
