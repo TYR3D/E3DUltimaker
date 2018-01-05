@@ -1,3 +1,4 @@
+// Thermocouple
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
@@ -138,7 +139,7 @@
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan) (1k pullup)
 
-#define TEMP_SENSOR_0 20
+#define TEMP_SENSOR_0 -1 //[UM2-PEEK pg.5]
 #define TEMP_SENSOR_1 20
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 20
@@ -163,9 +164,9 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 600 //[E3D]
-#define HEATER_1_MAXTEMP 600
-#define HEATER_2_MAXTEMP 600
+#define HEATER_0_MAXTEMP 600 //[E3D], [UM2-PEEK pg.4]
+#define HEATER_1_MAXTEMP 600 //[UM2-PEEK pg.4]
+#define HEATER_2_MAXTEMP 600 //[UM2-PEEK pg.4]
 #define BED_MAXTEMP 600
 
 //Check if the heater heats up MAX_HEATING_TEMPERATURE_INCREASE within MAX_HEATING_CHECK_MILLIS while the PID was at the maximum.

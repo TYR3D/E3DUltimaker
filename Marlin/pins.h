@@ -1184,7 +1184,7 @@
 #define TEMP_BED_PIN 10
 
 #define HEATER_0_PIN  2
-#define TEMP_0_PIN 8
+#define TEMP_0_PIN 0 //[UM2-PEEK pg.6]
 
 #define HEATER_1_PIN 3
 #define TEMP_1_PIN 9
